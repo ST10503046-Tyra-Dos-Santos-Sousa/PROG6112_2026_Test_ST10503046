@@ -1,1 +1,5 @@
 com\mycompany\question1\Question1.class
+com\mycompany\question1\Console.class
+com\mycompany\question1\Question2.class
+com\mycompany\question1\ConsoleDevice.class
+com\mycompany\question1\IConsole.class

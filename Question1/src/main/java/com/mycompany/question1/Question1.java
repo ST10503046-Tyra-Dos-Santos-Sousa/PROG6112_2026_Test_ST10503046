@@ -42,3 +42,4 @@ public class Question1 {
         System.out.println("Highest total sales: " + highestSales);
     }
 }
+
