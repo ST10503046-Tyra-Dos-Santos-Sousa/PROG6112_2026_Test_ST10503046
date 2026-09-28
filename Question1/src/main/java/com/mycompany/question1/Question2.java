@@ -20,24 +20,30 @@ abstract class Console implements IConsole {
         this.store = store;
         this.totalSales = totalSales;
     }
-
+@Override
     public String getConsoleType() {
         return consoleType;
     }
-
+@Override
     public String getStore() {
         return store;
     }
-
+@Override
     public int getTotalSales() {
         return totalSales;
     }
 }
 
-class ConsoleDevice extends Console {
+class ConsoleSales extends Console {
 
-    public ConsoleDevice(String consoleType, String store, int totalSales) {
+    public ConsoleSales(String consoleType, String store, int totalSales) {
         super(consoleType, store, totalSales);
+    }
+
+    public void printReport() {
+        System.out.println("Console Type: " + getConsoleType());
+        System.out.println("Store: " + getStore());
+        System.out.println("Total Sales: " + getTotalSales());
     }
 }
 
@@ -56,15 +62,12 @@ public class Question2 {
         System.out.print("Enter the total amount of sales: ");
         int totalSales = input.nextInt();
 
-        ConsoleDevice console = new ConsoleDevice(consoleType, store, totalSales);
+       ConsoleSales console = new ConsoleSales(consoleType, store, totalSales);
 
-        System.out.println();
-        System.out.println("CONSOLE SALES REPORT");
-        System.out.println("--------------------");
-        System.out.println("Store: " + console.getStore());
-        System.out.println("Console Type: " + console.getConsoleType());
-        System.out.println("Total Sales: " + console.getTotalSales());
+System.out.println();
+System.out.println("CONSOLE SALES REPORT");
+System.out.println("--------------------");
 
-        input.close();
-    }
-}
+console.printReport();
+
+input.close();
